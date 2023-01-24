@@ -232,6 +232,78 @@ header.sticky{
     margin-bottom: 20px;
 }
 
+.qualification{
+    background: var(--second-bg-color);
+}
+
+
+.qualification h2{
+    align-items: center;
+    font-size: var(--h2-font);
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.pBar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.pBar .card{
+    background: var(--bg-color);
+    height: 300px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.pBar .card .circle{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    /*border: 8px solid var(--main-color);*/
+    border-radius: 50%;
+}
+
+.card .circle .box, .card .circle .box p{
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    transition: all 0.1s;
+}
+
+.card .circle .box{
+    height: 100%;
+    width: 100%;
+    /*background: var(--second-bg-color);*/
+    transform: translate(-25%, -35%) scale(0.89);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.card .circle:hover .box{
+    transform: translate(-25%, -35%) scale(1.04);
+}
+
+.card .circle .box p{
+    font-size: var(--h2-font);
+    font-weight: 600;
+    font-family: var(--h2-font);
+    color: var(--main-color);
+}
+
+.card .text{
+    font-size: var(--p-font);
+    font-weight: 600;
+    color: var(--main-color);
+}
+
 .contactar{
     display: inline-block;
     padding: 8px 18px;
@@ -328,7 +400,7 @@ header.sticky{
 }
 
 .contact{
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -396,7 +468,7 @@ header.sticky{
 .formulario form input, form textarea{
     width: 100%;
     padding: 14px;
-    background: var(--bg-color);
+    background: var(--second-bg-color);
     color: var(--text-color);
     border: none;
     outline: none;
@@ -431,7 +503,7 @@ header.sticky{
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background: var(--bg-color);
+    background: var(--second-bg-color);
 }
 
 .consideracoes p{
@@ -525,5 +597,15 @@ header.sticky{
     }
     .navbar.open{
         top: 100%;
+    }
+}
+
+@media (max-width: 430px){
+    header{
+        background: var(--bg-color);
+        border-bottom: 1px solid rgb(11, 204, 124);
+    }
+    .home{
+        margin-top: 25px;
     }
 }

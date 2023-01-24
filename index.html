@@ -15,18 +15,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+    <!--Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Circle With Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js" integrity="sha512-6kvhZ/39gRVLmoM/6JxbbJVTYzL/gnbDVsHACLx/31IREU4l3sI7yeO0d4gw8xU5Mpmm/17LMaDHOCf+TvuC2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     
     <!--Navbar-->
     <header>
-        <a href="#" class="coder"><span>Dev</span>eloper</a>
+        <a href="#" class="coder"><span>Dev</span>eloper<span>></span></a>
 
         <ul class="navbar">
             <li><a href="#home" class="activo">Home</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">My Portfolio</a></li>
+            <li><a href="#qualification">Qualifications</a></li>
             <li><a href="#contact">Contact Me</a></li>
         </ul>
 
@@ -54,7 +61,7 @@
      <!--About-->
         <section class="about" id="about">
             <div class="a-img">
-                <img src="./img/about.jpg" alt="">
+                <img src="./img/Angel.JPG" alt="">
             </div>
             <div class="sobre">
                 <h2>About <span>Me</span></h2>
@@ -200,6 +207,75 @@
             </div>
         </section>
 
+        <!--Qualifications-->
+        <section class="qualification" id="qualification">
+            <div class="texto-qualifications">
+                <h2><span>Person</span>al <span>Quali</span>fica<span>t</span>ion<span>s</span></h2>
+            </div>
+            <div class="pBar">
+                <div class="card html">
+                    <div class="circle">
+                        <div class="bar">
+                            <div class="box">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">HTML & CSS</div>
+                </div>
+                <div class="card php">
+                    <div class="circle">
+                        <div class="bar">
+                            <div class="box">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">PHP</div>
+                </div>
+                <div class="card java">
+                    <div class="circle">
+                        <div class="bar">
+                            <div class="box">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">Java</div>
+                </div>
+                <div class="card js">
+                    <div class="circle">
+                        <div class="bar">
+                            <div class="box">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">JavaScript</div>
+                </div>
+                <div class="card sql">
+                    <div class="circle">
+                        <div class="bar">
+                            <div class="box">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">SQL Database</div>
+                </div>
+                <div class="card csharp">
+                    <div class="circle">
+                        <div class="bar">
+                            <div class="box">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">C#</div>
+                </div>
+            </div>
+        </section>
+
         <!--Contact-me-->
         <section class="contact" id="contact">
             <div class="texto-contacto">
@@ -244,5 +320,37 @@
 
     <!--Custom JavaScript-->
     <script type="text/javascript" src="./js/script.js"></script>
+
+
+    <script>
+        let options = {
+            startAngle: -1.55,
+            size: 210,
+            value: 0.85,
+            fill: {gradient: ["rgb(11, 204, 124)", "rgb(122, 24, 82)"]}
+        }
+        $(".circle .bar").circleProgress(options).on('circle-animation-progress',
+            function(event, progress, stepValue){
+                $(this).parent().find("p").text(String(stepValue.toFixed(2).substr(2)) + "%");
+            });
+        $(".html .bar").circleProgress({
+            value: 0.85,
+        });
+        $(".php .bar").circleProgress({
+            value: 0.70,
+        });
+        $(".java .bar").circleProgress({
+            value: 0.80,
+        });
+        $(".js .bar").circleProgress({
+            value: 0.50,
+        });
+        $(".sql .bar").circleProgress({
+            value: 0.70,
+        });
+        $(".csharp .bar").circleProgress({
+            value: 0.75,
+        });
+    </script>
 </body>
 </html>
